@@ -1,0 +1,15 @@
+{
+  "name": "vue-gitpage",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "ramda": "^0.26.1"
+  },
+  "scripts": {
+    "start": "vue serve"
+  },
+  "devDependencies": {
+    "vue": "^2.6.10"
+  }
+}
