@@ -8,7 +8,7 @@ export default {
          * @function get
          * @param {Object} query 
          * @param {string} query.field
-         * @param {function} query.function
+         * @param {function} query.reducer
          */
         const get = ({
             field = undefined, 
