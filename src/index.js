@@ -1,17 +1,35 @@
-import { mergeAll } from 'ramda'
 import parse from 'url-parse'
 
 export default {
-    install: function (Vue, opt) {
-        const params = () => mergeAll([
-            opt,
-            parse(window.location.href, true).query
-        ])
+    install: function (Vue, opt = {}) {
+        const params = () => parse(window.location.href, true).query
+
+        /**
+         * @function get
+         * @param {Object} query 
+         * @param {string} query.field
+         * @param {function} query.function
+         */
+        const get = ({
+            field = undefined, 
+            reducer = value => value
+        } = {}) => {
+            if (field === undefined) {
+                return reducer(params())
+            }
+
+            if (typeof field !== 'string') {
+                return undefined
+            }
+
+            let value = params()[field]
+            return reducer(value)
+        }
 
         Object.defineProperty(
             Vue.prototype,
             '$pageUtil',
-            { value: { params } }
+            { value: { get } }
         )
     }
 }

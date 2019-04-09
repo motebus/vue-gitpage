@@ -2,9 +2,7 @@ import Vue from 'vue'
 import App from './App'
 import pageUtil from './src/index'
 
-Vue.use(pageUtil, {
-  job: 'Web Dev'
-})
+Vue.use(pageUtil)
 
 new Vue({
   el: '#app',

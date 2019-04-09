@@ -8,7 +8,10 @@
 export default {
   name: "App",
   created() {
-    console.log(this.$pageUtil.params())
+    console.log(this.$pageUtil.get({
+      field: 'name',
+      reducer:  (value) => `hello ${value}`
+    }))
   }
 }
 </script>
