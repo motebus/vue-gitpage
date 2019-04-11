@@ -1,6 +1,6 @@
 module.exports = {
-    title: 'vue-gtipage',
-    base: '/vue-gitpage',
+    title: 'vue-gitpage',
+    base: '/vue-gitpage/',
     themeConfig: {
         displayAllHeaders: true,
         sidebar: [
