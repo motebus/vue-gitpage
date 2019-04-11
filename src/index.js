@@ -1,35 +1,12 @@
-import parse from 'url-parse'
+import get from './querystring'
+import createMMS from './webmms'
 
 export default {
     install: function (Vue, opt = {}) {
-        const params = () => parse(window.location.href, true).query
+        const $pageUtil = Object.create(null)
+        $pageUtil.get = get
+        $pageUtil.createMMS = createMMS
 
-        /**
-         * @function get
-         * @param {Object} query 
-         * @param {string} query.field
-         * @param {function} query.reducer
-         */
-        const get = ({
-            field = undefined, 
-            reducer = value => value
-        } = {}) => {
-            if (field === undefined) {
-                return reducer(params())
-            }
-
-            if (typeof field !== 'string') {
-                return undefined
-            }
-
-            let value = params()[field]
-            return reducer(value)
-        }
-
-        Object.defineProperty(
-            Vue.prototype,
-            '$pageUtil',
-            { value: { get } }
-        )
+        Vue.prototype.$pageUtil = $pageUtil
     }
 }

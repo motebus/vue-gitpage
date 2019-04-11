@@ -8,10 +8,18 @@
 export default {
   name: "App",
   created() {
-    console.log(this.$pageUtil.get({
-      field: 'name',
-      reducer:  (value) => `hello ${value}`
-    }))
+    console.log(
+      this.$pageUtil.get({
+        field: "name",
+        reducer: value => `hello ${value}`
+      })
+    );
+
+    let allQueryValue = this.$pageUtil.get();
+    console.log(allQueryValue);
+    
+    let mms = this.$pageUtil.createMMS()
+    console.log(mms)
   }
-}
+};
 </script>
