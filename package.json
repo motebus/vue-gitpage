@@ -13,10 +13,13 @@
     "url-parse": "^1.4.4"
   },
   "scripts": {
-    "dev": "vue serve"
+    "dev": "vue serve",
+    "docs:dev": "vuepress dev docs-src",
+    "docs:build": "vuepress build docs-src -d docs"
   },
   "devDependencies": {
     "esm": "^3.2.22",
-    "vue": "^2.6.10"
+    "vue": "^2.6.10",
+    "vuepress": "^0.14.10"
   }
 }

@@ -154,7 +154,7 @@ function createMMS({ wsurl = 'https://lib.ypcloud.com' } = {}) {
             })
         },
 
-        setAppSetting() {
+        setAppSetting(setting) {
             let { sockStat, mms } = this.store.getState()
             if (!sockStat) return Promise.reject({
                 ErrCode: mmserr.DCNotConn.code,

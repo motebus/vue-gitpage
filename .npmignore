@@ -3,3 +3,5 @@ App.vue
 main.js
 .gitignore
 README.md
+docs
+docs-src

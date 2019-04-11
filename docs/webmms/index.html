@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>webmms | vue-gtipage</title>
+    <meta name="description" content="">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.bc72b5c6.css" as="style"><link rel="preload" href="/assets/js/app.f552cdb8.js" as="script"><link rel="preload" href="/assets/js/5.41b5429f.js" as="script"><link rel="prefetch" href="/assets/js/2.d8f505d4.js"><link rel="prefetch" href="/assets/js/3.d735329e.js"><link rel="prefetch" href="/assets/js/4.8de93155.js"><link rel="prefetch" href="/assets/js/6.c6708033.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.bc72b5c6.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">vue-gtipage</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><!---->  <ul class="sidebar-links"><li><a href="/" class="sidebar-link">Manual installation</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/get/" class="sidebar-link">get</a></li><li><a href="/webmms/" class="active sidebar-link">webmms</a></li></ul> </div> <div class="page"> <div class="content"><h1 id="webmms"><a href="#webmms" aria-hidden="true" class="header-anchor">#</a> webmms</h1> <ul><li><p><strong>Get the webmms instance</strong></p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">/* Vue Component*/</span>
+<span class="token keyword">let</span> mms <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$pageUtil<span class="token punctuation">.</span><span class="token function">createMMS</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div></li> <li><p><strong>Methods</strong></p> <ul><li><p><code>on(name, callback)</code></p> <table><thead><tr><th>param</th> <th>type</th></tr></thead> <tbody><tr><td>name</td> <td><code>any</code> (required)</td></tr> <tr><td>callback</td> <td><code>function</code>(required)</td></tr></tbody></table> <p>Returns a function to release the listener.</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">let</span> releaseListener <span class="token operator">=</span> mms<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'hello'</span><span class="token punctuation">,</span> <span class="token parameter">name</span> <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`hello </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token function">releaseListener</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// releases the listener</span>
+</code></pre></div></li> <li><p><code>emit(name[,args])</code></p> <table><thead><tr><th>param</th> <th>type</th></tr></thead> <tbody><tr><td>name</td> <td><code>any</code> (required)</td></tr> <tr><td>args</td> <td>any number of values of <code>any</code></td></tr></tbody></table> <p>Returns an array with every return value for each on callback.</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> o1 <span class="token operator">=</span> mms<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'someEvent'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> o2 <span class="token operator">=</span> mms<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'someEvent'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> o3 <span class="token operator">=</span> mms<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'someEvent'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token boolean">true</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> result <span class="token operator">=</span> mms<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">'someEvent'</span><span class="token punctuation">)</span>  <span class="token comment">// &gt; [ 1, 2, true] </span>
+</code></pre></div></li> <li><p><code>sendMMS({ topic, DDN, payload })</code></p> <table><thead><tr><th>param</th> <th>type</th></tr></thead> <tbody><tr><td>topic</td> <td><code>string</code> (required)</td></tr> <tr><td>DDN</td> <td><code>string</code> (required)</td></tr> <tr><td>payload</td> <td><code>Object | String</code> (required)</td></tr></tbody></table> <p>Returns the reply</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">let</span> reply <span class="token operator">=</span> <span class="token keyword">await</span> mms<span class="token punctuation">.</span><span class="token function">sendMMS</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    topic<span class="token punctuation">:</span> <span class="token string">'ss://ylobby'</span><span class="token punctuation">,</span>
+    <span class="token constant">DDN</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+    payload<span class="token punctuation">:</span> <span class="token string">'notify Hello 60 red 3'</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div></li> <li><p><code>callMMS({ topic, DDN, func, payload })</code></p> <table><thead><tr><th>param</th> <th>type</th></tr></thead> <tbody><tr><td>topic</td> <td><code>string</code> (required)</td></tr> <tr><td>DDN</td> <td><code>string</code> (required)</td></tr> <tr><td>func</td> <td><code>string</code>(required)</td></tr> <tr><td>payload</td> <td><code>Object | String</code>(required)</td></tr></tbody></table> <p>Returns the reply</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">let</span> reply <span class="token operator">=</span> <span class="token keyword">await</span> mms<span class="token punctuation">.</span><span class="token function">callMMS</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    topic<span class="token punctuation">:</span> <span class="token string">'jLobby'</span><span class="token punctuation">,</span>
+    <span class="token constant">DDN</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+    func<span class="token punctuation">:</span> <span class="token string">'echo'</span><span class="token punctuation">,</span>
+    payload<span class="token punctuation">:</span> <span class="token punctuation">{</span> data<span class="token punctuation">:</span> <span class="token string">'Hello MMS'</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div></li> <li><p><code>nearby()</code></p> <p>Returns the nearby result</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">let</span> reply <span class="token operator">=</span> <span class="token keyword">await</span> mms<span class="token punctuation">.</span><span class="token function">nearby</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div></li> <li><p><code>getDeviceInfo()</code></p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">let</span> deviceInfo <span class="token operator">=</span> <span class="token keyword">await</span> mms<span class="token punctuation">.</span><span class="token function">getDeviceInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div></li> <li><p><code>setDeviceInfo(deviceInfo)</code></p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">let</span> deviceInfo <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token constant">DDN</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+    EiOwner<span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+    EiName<span class="token punctuation">:</span> <span class="token string">'eiHello'</span><span class="token punctuation">,</span>
+    EiType<span class="token punctuation">:</span> <span class="token string">'.mc'</span><span class="token punctuation">,</span>
+    EiTag<span class="token punctuation">:</span> <span class="token string">'#hello'</span><span class="token punctuation">,</span>
+    EiLog<span class="token punctuation">:</span> <span class="token string">''</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> result <span class="token operator">=</span> <span class="token keyword">await</span> mms<span class="token punctuation">.</span><span class="token function">setDeviceInfo</span><span class="token punctuation">(</span>deviceInfo<span class="token punctuation">)</span>
+</code></pre></div></li> <li><p><code>getAppSetting()</code></p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">let</span> result <span class="token operator">=</span> <span class="token keyword">await</span> mms<span class="token punctuation">.</span><span class="token function">getAppSetting</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div></li></ul></li> <li><p><strong>Deal the mms event</strong></p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// while register to dc successfully, emit the 'registered' signal</span>
+mms<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'registered'</span><span class="token punctuation">,</span> <span class="token parameter">reply</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// do something</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// while get the message, emit the 'message' signal</span>
+mms<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'message'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">method<span class="token punctuation">,</span> <span class="token keyword">from</span><span class="token punctuation">,</span> data<span class="token punctuation">,</span> ack</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// do something</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+mms<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'state'</span><span class="token punctuation">,</span> <span class="token parameter">msg</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// do something</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+mms<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'disconnect'</span><span class="token punctuation">,</span> <span class="token parameter">msg</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// do something</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+mms<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'error'</span><span class="token punctuation">,</span> <span class="token parameter">err</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// do something</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+mms<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'connect_error'</span><span class="token punctuation">,</span> <span class="token parameter">err</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// do something</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+mms<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'connect_timeout'</span><span class="token punctuation">,</span> <span class="token parameter">err</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// do something</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div></li></ul></div> <div class="page-edit"><!----> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/get/" class="prev">
+          get
+        </a></span> <!----></p></div> </div> <!----></div></div>
+    <script src="/assets/js/app.f552cdb8.js" defer></script><script src="/assets/js/5.41b5429f.js" defer></script>
+  </body>
+</html>
