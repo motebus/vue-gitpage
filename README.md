@@ -1,5 +1,7 @@
 ## Vue-gitpage
 
+[Document](https://motebus.github.io/vue-gitpage/)
+
 ``` javascript
 /* main.js */
 
