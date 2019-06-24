@@ -5,8 +5,7 @@ module.exports = {
         displayAllHeaders: true,
         sidebar: [
             '/',
-            '/get/',
-            '/webmms/'
+            '/get/'
         ]
     }
 }

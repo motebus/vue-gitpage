@@ -15,7 +15,3 @@ Vue.use(pageUtil)
 | function                | description                       |
 | ----------------------- | --------------------------------- |
 | [get](/get/)            | get the querystring params        |
-| [createMMS](/webmms/)   | create  a  instance of the webmms |
-
-
-

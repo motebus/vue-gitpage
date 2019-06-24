@@ -24,6 +24,10 @@ function get({
     field = undefined,
     reducer = value => value
 } = {}) {
+    if (typeof reducer === 'function') {
+        throw new TypeError('reducer should be typeof function.')
+    }
+
     if (field === undefined) {
         return reducer(params())
     }
